@@ -1,0 +1,21 @@
+{% extends 'web.html' %}
+{% block body %}
+<div class="container-fluid">
+ <div class="row">
+  <div class="col-md-12">
+   <div class="row row-cols-1 row-cols-md-3 g-4">
+     {% for i in mys%}
+      <div class="col">
+       <div class="card h-100">
+        <img src="{{i.img.url}}" class="card-img-top" alt="..." height="300">
+         <div class="card-body" style="background-color:black;">
+           <a class="card-title" href="{% url 'movie:detail' i.id %}" >{{i.name}}</a>
+         </div>
+       </div>
+      </div>
+     {% endfor %}
+   </div>
+  </div>
+ </div>
+</div>
+{% endblock %}

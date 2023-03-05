@@ -1,0 +1,22 @@
+{% extends 'web.html' %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card h-100">
+             <img src="{{mo.img.url}}" class="card-img-top" alt="..." height="400">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h2 style="color:White;">{{mo.name}}</h2>
+            <h6 style="color:White;">{{mo.year}}</h6>
+            <h8 style="color:White;">{{mo.desc}}</h8>
+        </div>
+        <div class="col-md-6">
+            <a class="btn btn-warning" href="{% url 'movie:update' mo.id %}">Update</a>
+            <a class="btn btn-danger" href="{% url 'movie:delete' mo.id %}">Delete</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
